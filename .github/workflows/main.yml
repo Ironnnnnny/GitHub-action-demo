@@ -23,8 +23,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: e-mail body
         run: echo https://github.com/Ironnnnnny/GitHub-action-demo >> body.html
-             git log | head -n6 >> body.html
 
+      - name: get log
+        run: git log | head -6 >> body.html
+             
       # Runs a set of commands using the runners shell
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
